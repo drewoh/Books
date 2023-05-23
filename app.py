@@ -1,7 +1,7 @@
 from flask import Flask, request
 from flask_smorest import Api
 from db import db
-from resources.book import bp as BookBlueprint
+from resources.book import blp as BookBlueprint
 
 def create_app():
     app = Flask(__name__)
