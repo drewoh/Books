@@ -1,6 +1,7 @@
 .card {
   border-radius: 0;
   margin-bottom: 20px;
+  background-color: transparent;
 }
 
 @media (max-width: 428px) {

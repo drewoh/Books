@@ -4,7 +4,7 @@ import './App.css';
 import Books from "components/Books";
 
 import { 
-  NextUIProvider, styled, Container, Text, Navbar 
+  NextUIProvider, styled, Container
 } from '@nextui-org/react';
 
 function App() {

@@ -1,14 +1,9 @@
-import { IBook } from "models";
 import { 
-  Card, Grid, Row, Text, 
+  Grid, Text, 
 } from '@nextui-org/react';
 import "./styles.css"
 
 import BookCard from './BookCard';
-
-interface IProps {
-  books: IBook[];
-}
 
 const Books = () => {
   const list = [

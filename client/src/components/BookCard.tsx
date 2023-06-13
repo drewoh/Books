@@ -22,9 +22,9 @@ const BookCard = ({ book }: BookProps) => {
     <>
       <BookModal book={book} isVisible={visibility} setVisibility={setVisibility}/>
       <Card 
-        className="card" isPressable borderWeight="light" 
+        className="card" isPressable
         onPress={onPressHandler}
-        css={{maxWidth: "192px", height: "293px", border: "none", boxShadow: "none"}}
+        css={{maxWidth: "192px", height: "293px", border: "0", boxShadow: "none"}}
       >
         <Card.Image
           src={book.img}
