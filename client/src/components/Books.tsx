@@ -1,14 +1,16 @@
 import { IBook } from "models";
 import { 
-  Card, Grid, Row, Text, Container
+  Card, Grid, Row, Text, 
 } from '@nextui-org/react';
 import "./styles.css"
+
+import BookCard from './BookCard';
 
 interface IProps {
   books: IBook[];
 }
 
-const Books = ({ books }: IProps) => {
+const Books = () => {
   const list = [
     {
       title: "Post Office",
@@ -38,25 +40,7 @@ const Books = ({ books }: IProps) => {
     <Grid.Container gap={0} wrap="wrap" className="grid-container" css={{margin: "auto", padding:0, justifyContent: "space-between"}}>
       {list.map((item, index) => (
         <Grid key={index} className="grid-card" css={{justifyContent: "center", padding: "0", border: "none", borderShadow: "none", borderRadius: "0"}}>
-          <Card className="card" isPressable borderWeight="light" css={{maxWidth: "192px", height: "293px", border: "none", boxShadow: "none"}}>
-            <Card.Image
-              src={item.img}
-              alt={item.title}
-              className="image-container"
-            />
-            <Card.Footer className="card-footer" css={{ flexDirection: "column", alignItems: "flex-start", marginLeft: "5px"}}>
-              <Row>
-                <Text className="authors" css={{color: "$accents7", fontWeight: "$semibold", fontSize: "$sm", whiteSpace: "nowrap", overflow: "hidden", textOverflow:"ellipsis"}}>
-                  {item.authors}
-                </Text>
-              </Row>
-              <Row>
-                <Text b className="title" css={{fontSize: "$md", whiteSpace: "nowrap", overflow: "hidden", textOverflow:"ellipsis"}}>
-                  {item.title}
-                </Text>
-              </Row>
-            </Card.Footer>
-          </Card>
+          <BookCard book={{...item, id: index}} />
         </Grid>
       ))}
     </Grid.Container>

@@ -7,8 +7,6 @@ import {
   NextUIProvider, styled, Container, Text, Navbar 
 } from '@nextui-org/react';
 
-const books = [{id:1, title:"Shoe Dog", authors: "Phil Knight"}]
-
 function App() {
   const StyledContainer = styled(Container, {
     display: "flex",
@@ -22,7 +20,7 @@ function App() {
   return (
     <NextUIProvider>
       <StyledContainer>
-        <Books books={books}/>
+        <Books />
       </StyledContainer>
     </NextUIProvider>
   );
