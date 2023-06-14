@@ -3,4 +3,5 @@ export interface IBook {
   title: string;
   authors: string;
   img: string;
+  comment: string;
 }

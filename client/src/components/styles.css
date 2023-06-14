@@ -4,7 +4,15 @@
   background-color: transparent;
 }
 
-@media (max-width: 428px) {
+.book-modal {
+  width: 100%;
+}
+
+.modal-image img {
+  object-fit: cover;
+}
+
+@media (max-width: 431px) {
   .grid-container {
     justify-content: center;
   }

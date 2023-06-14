@@ -1,4 +1,7 @@
-import { Modal, Button, Text } from "@nextui-org/react";
+import { 
+  Modal, Card, Text, Grid, 
+} from '@nextui-org/react';
+
 import { IBook } from "models";
 
 interface ModalProps {
@@ -6,7 +9,6 @@ interface ModalProps {
   isVisible: boolean;
   setVisibility: (params: any) => any;
 }
-
 
 const BookModal = ({ book, isVisible, setVisibility }: ModalProps) => {
   const onCloseHandler = () => {
@@ -16,38 +18,30 @@ const BookModal = ({ book, isVisible, setVisibility }: ModalProps) => {
   return (
     <Modal
       scroll
-      width="600px"
       aria-labelledby="book"
       aria-describedby="book-description"
       open={isVisible}
       onClose={onCloseHandler}
+      className="book-modal"
     >
-      <Modal.Header>
-        <Text id="modal-title" size={18}>
-          Book Title
-        </Text>
-      </Modal.Header>
-      <Modal.Body>
-        <Text id="modal-description">
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-          ac consectetur ac, vestibulum at eros. Praesent commodo cursus
-          magna, vel scelerisque nisl consectetur et. Cras mattis consectetur
-          purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
-          egestas eget quam. Morbi leo risus, porta ac consectetur ac,
-          vestibulum at eros. Praesent commodo cursus magna, vel scelerisque
-          nisl consectetur et. Cras mattis consectetur purus sit amet
-          fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
-        </Text>
+      <Modal.Body
+      >
+        <Card 
+          css={{ 
+            w: "100%", textAlign: "left", 
+            margin: 0, overflowWrap: "break-word"
+          }}
+        >
+          <Card.Body>
+              <Grid>
+                <Card.Image className="modal-image" src={book.img} />
+                <Text>{book.authors}</Text>
+                <Text>{book.title}</Text>
+                <Text>{book.comment}</Text>
+              </Grid>
+          </Card.Body>
+        </Card>
       </Modal.Body>
-      <Modal.Footer>
-        <Button auto flat color="error" onPress={onCloseHandler}>
-          Close
-        </Button>
-        <Button auto onPress={onCloseHandler}>
-          Okay
-        </Button>
-      </Modal.Footer>
     </Modal>
   );
 }
