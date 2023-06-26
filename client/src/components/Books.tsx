@@ -1,8 +1,10 @@
 import { 
-  Grid, Text, 
+  Container, Grid, Text, 
+  Navbar
 } from '@nextui-org/react';
 import "./styles.css"
 
+import AddButton from './AddButton';
 import BookCard from './BookCard';
 
 const Books = () => {
@@ -35,7 +37,14 @@ const Books = () => {
 
  return (
   <>
-    <Text h2>Comments on Books.</Text>
+    <Navbar className="nav-bar">
+      <Navbar.Content>
+        <Text h2 className="logo" css={{margin: "auto"}}>Comments on Books.</Text>
+      </Navbar.Content>
+      <Navbar.Content>
+        <AddButton /> 
+      </Navbar.Content>
+    </Navbar> 
     <Grid.Container gap={0} wrap="wrap" className="grid-container" css={{margin: "auto", padding:0, justifyContent: "space-between"}}>
       {list.map((item, index) => (
         <Grid key={index} className="grid-card" css={{justifyContent: "center", padding: "0", border: "none", borderShadow: "none", borderRadius: "0"}}>
